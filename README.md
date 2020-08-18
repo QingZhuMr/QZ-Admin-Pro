@@ -1,24 +1,19 @@
-# shop
-
-## Project setup
+# VUE管理后台模板
 ```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
+开发者：小竹菌
+使用授权：免费商业授权
 ```
 
-### Compiles and minifies for production
+## 项目背景
 ```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
+因为要找工作，就写了一个这个
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## 第三方
+```
+ElementUI
+```
+## 联系邮箱
+```
+Qingzhumr@163.com
+```
