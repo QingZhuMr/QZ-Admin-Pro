@@ -2,13 +2,50 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Login from '../components/Login.vue'
 import Home from '../components/Home.vue'
+import Index from '../components/Index.vue'
+import Users from '../components/user/Users.vue'
 
 Vue.use(VueRouter)
 const routes = [
   // redirct是重新导向的意思
-  { path: '/', redirct: '/login' },
-  { path: '/login', component: Login },
-  { path: '/home', component: Home }
+  {
+    path: '/',
+    redirct: '/login',
+    meta: {
+      title: '登录 - 后台管理系统'
+    }
+  },
+  {
+    path: '/login',
+    component: Login,
+    meta: {
+      title: '登录 - 后台管理系统'
+    }
+  },
+  {
+    path: '/home',
+    component: Home,
+    redirect: '/index',
+    meta: {
+      title: '后台管理系统'
+    },
+    children: [
+      {
+        path: '/index',
+        component: Index,
+        meta: {
+          title: '首页 - 后台管理系统'
+        }
+      },
+      {
+        path: '/users',
+        component: Users,
+        meta: {
+          title: '用户列表 - 后台管理系统'
+        }
+      }
+    ]
+  }
 
 ]
 

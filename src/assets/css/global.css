@@ -1,20 +1,41 @@
-html,
-body,
-#app {
-    height: 100%;
-    margin: 0;
-    padding: 0;
+html, body, #app {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: SiyuanSong;
 }
-.el-form-item.is-success .el-input__inner,
-.el-form-item.is-success .el-input__inner:focus,
-.el-form-item.is-success .el-textarea__inner,
-.el-form-item.is-success .el-textarea__inner:focus {
+
+input {
+  -webkit-user-select: auto;
+  font-family: SiyuanSong;
+  /*webkit浏览器*/
+}
+button{
+  font-family: SiyuanSong;
+}
+
+textarea {
+  -webkit-user-select: auto;
+  /*webkit浏览器*/
+}
+.el-table{
+  margin-top:20px;
+}
+.el-pagination{
+  margin-top:20px;
+}
+.el-breadcrumb{
+  margin-bottom: 20px;
+  font-size: 0.788rem;
+}
+.el-form-item.is-success .el-input__inner, .el-form-item.is-success .el-input__inner:focus, .el-form-item.is-success .el-textarea__inner, .el-form-item.is-success .el-textarea__inner:focus {
   border-color: #67c23a;
 }
-.el-form-item.is-success .el-input-group__append .el-input__inner,
-.el-form-item.is-success .el-input-group__prepend .el-input__inner {
+
+.el-form-item.is-success .el-input-group__append .el-input__inner, .el-form-item.is-success .el-input-group__prepend .el-input__inner {
   border-color: transparent;
 }
+
 .el-form-item.is-success .el-input__validateIcon {
   color: #67c23a;
 }

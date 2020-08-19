@@ -1,0 +1,12 @@
+@font-face{
+    font-family: SiyuanRouHei;
+    src: url('../../common/SiyuanRouHei.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: SiyuanSong;
+    src: url('../../common/SiyuanSong.otf');
+    font-weight: normal;
+    font-style: normal;
+}
