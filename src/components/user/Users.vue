@@ -73,12 +73,15 @@
         <el-form-item label="手机" prop="mobile">
           <el-input v-model="addForm.mobile" placeholder="请输入手机号码"></el-input>
         </el-form-item>
+        <el-form-item>
+          <el-button @click="addDialogVisible = false">取 消</el-button>
+          <el-button type="primary" @click="addUser = false">确 定</el-button>
+        </el-form-item>
       </el-form>
       <!--底部区域-->
-      <span slot="footer" class="dialog-footer">
-        <el-button @click="addDialogVisible = false">取 消</el-button>
-        <el-button type="primary" @click="addUser = false">确 定</el-button>
-      </span>
+      <!--span slot="footer" class="dialog-footer">
+
+      </span-->
     </el-dialog>
   </div>
 </template>
@@ -93,21 +96,6 @@ export default {
       if (!regEmail.test(value)) {
         // 不合法的邮箱
         callback(new Error('请输入合法的电子邮箱'))
-      } else {
-        return callback()
-      }
-    }
-    // 验证账号
-    var checkUsername = (rule, value, callback) => {
-      if (!value) {
-        callback(new Error('账号不能为空'))
-      } else {
-        return callback()
-      }
-    }
-    var checkPassword = (rule, value, callback) => {
-      if (!value) {
-        callback(new Error('密码不能为空'))
       } else {
         return callback()
       }
@@ -148,11 +136,11 @@ export default {
       addFormRules: {
         username: [
           { required: true, message: '请输入用户名', trigger: 'blur' },
-          { validator: checkUsername, min: 3, max: 10, message: '长度在 3 到 10 个字符', trigger: 'blur' }
+          { min: 3, max: 10, message: '长度在 3 到 10 个字符', trigger: 'blur' }
         ],
         password: [
           { required: true, message: '请输入密码', trigger: 'blur' },
-          { validator: checkPassword, min: 6, max: 15, message: '长度在 6 到 15 个字符', trigger: 'blur' }
+          { min: 6, max: 15, message: '长度在 6 到 15 个字符', trigger: 'blur' }
         ],
         email: [
           { required: true, message: '请输入电子邮箱', trigger: 'blur' },
