@@ -18,7 +18,7 @@
         </el-col>
       </el-row>
 
-      <el-table :data="userlist" border stripc>
+      <el-table :data="userlist" border stripe>
         <el-table-column type="index" label="#" width="50"></el-table-column>
         <el-table-column prop="username" label="用户"></el-table-column>
         <el-table-column prop="mobile" label="号码"></el-table-column>
@@ -33,14 +33,14 @@
         <el-table-column label="操作" width="210">
           <template v-slot="scope">
             <el-tooltip effect="dark" content="修改用户" placement="top">
-            <!--打开对话框并把id值传过去-->
-              <el-button type="primary" icon="el-icon-edit" @click="showEditDialog(scope.row.id)"></el-button>
+              <!--打开对话框并把id值传过去-->
+              <el-button type="primary" icon="el-icon-edit" size="mini" @click="showEditDialog(scope.row.id)"></el-button>
             </el-tooltip>
             <el-tooltip effect="dark" content="删除用户" placement="top">
-              <el-button type="danger" icon="el-icon-delete" @click="removeUserByid(scope.row.id)"></el-button>
+              <el-button type="danger" icon="el-icon-delete" size="mini" @click="removeUserByid(scope.row.id)"></el-button>
             </el-tooltip>
             <el-tooltip effect="dark" content="修改权限" placement="top">
-              <el-button type="warning" icon="el-icon-paperclip"></el-button>
+              <el-button type="warning" icon="el-icon-paperclip" size="mini"></el-button>
             </el-tooltip>
           </template>
         </el-table-column>
@@ -83,8 +83,8 @@
 
     <!--修改用户对话框-->
     <el-dialog title="修改用户" :visible.sync="editDialogVisible" width="30%" @close="dialogClosed">
-       <el-form :model="editForm" :rules="rules" ref="editFormRef" label-width="70px">
-        <el-form-item label="用户" prop="username" >
+      <el-form :model="editForm" :rules="rules" ref="editFormRef" label-width="70px">
+        <el-form-item label="用户" prop="username">
           <el-input v-model="editForm.username" disabled></el-input>
         </el-form-item>
         <el-form-item label="邮箱" prop="email">

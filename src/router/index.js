@@ -4,6 +4,8 @@ import Login from '../components/Login.vue'
 import Home from '../components/Home.vue'
 import Index from '../components/Index.vue'
 import Users from '../components/user/Users.vue'
+import Rights from '../components/power/Rights.vue'
+import Roles from '../components/power/Roles.vue'
 
 Vue.use(VueRouter)
 const routes = [
@@ -43,10 +45,22 @@ const routes = [
         meta: {
           title: '用户列表 - 后台管理系统'
         }
+      },
+      {
+        path: '/rights',
+        component: Rights,
+        meta: {
+          title: '权限列表 - 后台管理系统'
+        }
+      }, {
+        path: '/roles',
+        component: Roles,
+        meta: {
+          title: '角色列表 - 后台管理系统'
+        }
       }
     ]
   }
-
 ]
 
 const router = new VueRouter({

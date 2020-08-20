@@ -18,9 +18,13 @@
           :collapse="isCollapse"
           :collapse-transition="false"
           router
-          :default-active="activePath"
+          :default-active="$route.path"
         >
           <!--一级菜单-->
+          <el-menu-item index="/index" >
+            <i class="el-icon-s-platform"></i>
+            <span slot="title">控制台</span>
+          </el-menu-item>
           <el-submenu :index="item.id+''" v-for="item in menulist" :key="item.id">
             <template slot="title">
               <i :class="iconsObj[item.id]"></i>
@@ -29,11 +33,10 @@
             <!--二级菜单-->
             <el-menu-item
               :index="'/'+subItem.path"
-              @click="saveNavState('/'+subItem.path)"
               v-for="subItem in item.children"
               :key="subItem.id"
             >
-              <i class="el-icon-menu"></i>
+              <!--i class="el-icon-menu"></i-->
               <span>{{subItem.authName}}</span>
             </el-menu-item>
           </el-submenu>
@@ -65,13 +68,11 @@ export default {
         102: 'el-icon-s-finance',
         145: 'el-icon-s-claim'
       },
-      isCollapse: false,
-      activePath: ''
+      isCollapse: false
     }
   },
   created () {
     this.getMenuList()
-    this.activePath = window.sessionStorage.getItem('activePath')
   },
   methods: {
     logout () {
@@ -90,11 +91,6 @@ export default {
     // 点击按钮切换菜单折叠与展开
     toggleCollapse () {
       this.isCollapse = !this.isCollapse
-    },
-
-    saveNavState (activePath) {
-      window.sessionStorage.setItem('activePath', activePath)
-      this.activePath = activePath
     }
 
   }
@@ -105,12 +101,7 @@ export default {
 .index_container {
   height: 100%;
 }
-.el-menu {
-  border-right: none;
-}
-.el-menu-item {
-  font-size: 0.851rem;
-}
+
 .el-header {
   display: flex;
   justify-content: space-between;
@@ -167,8 +158,13 @@ export default {
   -ms-user-select: none;
   /*IE10*/
   user-select: none;
+  .el-menu {
+    border-right: none;
+    .el-menu-item {
+      font-size: 0.851rem;
+    }
+  }
 }
-
 .el-footer {
   line-height: 30px;
   border-top: 1px solid #f0f0f0;

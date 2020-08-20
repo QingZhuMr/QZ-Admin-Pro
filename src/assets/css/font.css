@@ -1,8 +1,10 @@
+/**已内置思源黑体和思源宋体**/
 @font-face{
-    font-family: SiyuanRouHei;
-    src: url('../../common/SiyuanRouHei.ttf');
+    font-family: SiyuanHei;
+    src: url('../../common/SiyuanRouHei.otf');
     font-weight: normal;
     font-style: normal;
+    line-break: normal;
 }
 @font-face{
     font-family: SiyuanSong;
@@ -10,3 +12,5 @@
     font-weight: normal;
     font-style: normal;
 }
+
+
