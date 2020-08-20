@@ -1,5 +1,5 @@
 # QZ Admin Pro 后台管理模板
-```
+
 **运行依赖**
 ![Vue](https://img.shields.io/badge/Vue-2.6.11-green)
 ![Element](https://img.shields.io/badge/Element-2.13.2-green)
@@ -14,6 +14,7 @@
 
 **如果觉得Eslint过于严格请关闭**
 
+```
 开发者：小竹菌
 
 
