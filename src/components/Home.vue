@@ -1,12 +1,12 @@
 <template>
   <el-container class="index_container">
-    <el-header style="height:80px">
+    <el-header style="height:60px">
       <span>
         <div class="index_logo">
           <img src="../assets/logo.png" />
         </div>管理后台
       </span>
-      <el-button class="btn" @click="logout" round>退出</el-button>
+      <el-button class="btn" @click="logout" round size="mini">退出</el-button>
     </el-header>
     <el-container>
       <el-aside :width="isCollapse ? '64px' : '200px'">
@@ -21,7 +21,7 @@
           :default-active="$route.path"
         >
           <!--一级菜单-->
-          <el-menu-item index="/index" >
+          <el-menu-item index="/index">
             <i class="el-icon-s-platform"></i>
             <span slot="title">控制台</span>
           </el-menu-item>
@@ -77,8 +77,15 @@ export default {
   methods: {
     logout () {
       // 清空token
-      window.sessionStorage.clear()
-      this.$router.push('/login')
+      this.$confirm('是否删除该角色, 是否继续?', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).then(() => {
+        localStorage.removeItem('token')
+        // this.sessionStorage.clear()
+        this.$router.push('/login')
+      }).catch(err => err)
     },
     async getMenuList () {
       // 左侧菜单接口获取
@@ -108,7 +115,6 @@ export default {
   align-items: center;
   background-color: #13a5f0;
   color: #fff;
-  line-height: 60px;
   -webkit-touch-callout: none;
   /*系统默认菜单被禁用*/
   -webkit-user-select: none;
@@ -120,16 +126,13 @@ export default {
   -ms-user-select: none;
   /*IE10*/
   user-select: none;
-  .btn {
-    height: 40px;
-  }
+  line-height: 40px;
   span {
-    font-size: 1.666rem;
+    font-size: 1.366rem;
     margin-left: 10px;
-    height: 60px;
     .index_logo {
-      width: 60px;
-      height: 60px;
+      width: 40px;
+      height: 40px;
       float: left;
       background-color: #fff;
       border-radius: 50%;
@@ -138,11 +141,12 @@ export default {
       img {
         width: 70%;
         height: 70%;
-        margin-top: 12px;
+        margin-top: 8px;
       }
     }
   }
 }
+
 .el-aside {
   overflow: hidden;
   background-color: #fff;
