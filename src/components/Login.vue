@@ -50,10 +50,7 @@ export default {
   data () {
     return {
       // 登录表单数据绑定对象
-      loginForm: {
-        username: '',
-        password: ''
-      },
+      loginForm: {},
       loginFormRules: {
         username: [
           { required: true, message: '请输入用户名', trigger: 'blur' },

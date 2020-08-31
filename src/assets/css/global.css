@@ -14,19 +14,29 @@ textarea {
   -webkit-user-select: auto;
   /*webkit浏览器*/
 }
-.el-table{
-  margin-top:20px;
+
+.el-cascader-menu {
+  height: 300px;
+  width: 100%;
 }
-.el-pagination{
-  margin-top:20px;
+
+.el-table {
+  margin-top: 20px;
 }
-.el-breadcrumb{
+
+.el-pagination {
+  margin-top: 20px;
+}
+
+.el-breadcrumb {
   margin-bottom: 20px;
   font-size: 0.788rem;
 }
+
 .el-submenu__icon-arrow {
-  margin-top: -5px  !important;
+  margin-top: -5px !important;
 }
+
 .el-form-item.is-success .el-input__inner, .el-form-item.is-success .el-input__inner:focus, .el-form-item.is-success .el-textarea__inner, .el-form-item.is-success .el-textarea__inner:focus {
   border-color: #67c23a;
 }
