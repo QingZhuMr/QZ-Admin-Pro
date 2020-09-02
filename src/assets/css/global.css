@@ -15,10 +15,17 @@ textarea {
   /*webkit浏览器*/
 }
 
-.el-cascader-menu {
-  height: 300px;
-  width: 100%;
+.el-cascader-panel{
+  height: 250px;
 }
+.el-scrollbar__wrap {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+/* .el-cascader-menu {
+  padding: 0px 10px;
+  width: 100%;
+} */
 
 .el-table {
   margin-top: 20px;

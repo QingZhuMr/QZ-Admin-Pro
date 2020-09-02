@@ -30,7 +30,6 @@
           <el-button
             icon="el-icon-s-promotion"
             @click="login"
-            native-type="submit"
             type="primary"
           >登录</el-button>
           <el-button icon="el-icon-refresh-left" type="info" @click="resetLoginForm">重置</el-button>

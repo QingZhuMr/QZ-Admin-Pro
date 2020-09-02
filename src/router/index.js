@@ -7,6 +7,7 @@ import Users from '../components/user/Users.vue'
 import Rights from '../components/power/Rights.vue'
 import Roles from '../components/power/Roles.vue'
 import Cate from '../components/goods/Cate.vue'
+import Params from '../components/goods/Params.vue'
 
 Vue.use(VueRouter)
 const routes = [
@@ -65,6 +66,13 @@ const routes = [
         component: Cate,
         meta: {
           title: '商品分类 - 后台管理系统'
+        }
+      },
+      {
+        path: '/params',
+        component: Params,
+        meta: {
+          title: '分类参数 - 后台管理系统'
         }
       }
 
